@@ -1,0 +1,29 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-resource-internal/blob/main/v1/interop-resource-retrieve-v1.schema.json",
+  "title": "Interop Resource Retrieve",
+  "description": "This event represents the Resource as retrieved from a client EMR by the Interops process.",
+  "type": "object",
+  "properties": {
+    "tenantId": {
+      "description": "The ID of the tenant for which the resource was retrieved",
+      "type": "string"
+    },
+    "resourceType": {
+      "$ref": "meta.schema.json#/$defs/ResourceType"
+    },
+    "resourceJson": {
+      "description": "The JSON string representation of the FHIR resource that was retrieved.",
+      "type": "string"
+    },
+    "meta": {
+      "description": "The metadata associated to this load",
+      "$ref": "meta.schema.json"
+    }
+  },
+  "required": [
+    "tenantId",
+    "resourceType",
+    "resourceJson",
+    "meta"
+  ]
+}
