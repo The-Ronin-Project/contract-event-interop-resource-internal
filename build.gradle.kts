@@ -16,7 +16,12 @@ buildscript {
 plugins {
     id("com.projectronin.interop.gradle.version")
     id("com.projectronin.interop.gradle.publish")
+    id("com.projectronin.interop.gradle.junit")
     id("com.projectronin.event.contract")
+}
+
+dependencies {
+    implementation(libs.guava)
 }
 
 apply<net.pwall.json.kotlin.codegen.gradle.JSONSchemaCodegenPlugin>()

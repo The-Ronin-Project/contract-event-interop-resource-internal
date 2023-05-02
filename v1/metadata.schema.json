@@ -1,0 +1,46 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-resource-internal/blob/main/v1/metadata.schema.json",
+  "title": "Interops Metadata schema",
+  "description": "Provides common metadata relevant to Interops events",
+  "type": "object",
+  "properties": {
+    "runId": {
+      "description": "The ID associated to the run for which this event was created",
+      "type": "string"
+    },
+    "runDateTime": {
+      "description": "The date and time when the run was initiated",
+      "type": "string",
+      "format": "date-time"
+    },
+    "upstreamReferences": {
+      "description": "Set of upstream references that triggered this event",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/UpstreamReference"
+      }
+    }
+  },
+  "required": [
+    "runId",
+    "runDateTime"
+  ],
+  "$defs": {
+    "UpstreamReference": {
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "$ref": "resource-type.schema.json"
+        },
+        "id": {
+          "description": "The FHIR ID for this reference",
+          "type": "string"
+        }
+      },
+      "required": [
+        "resourceType",
+        "id"
+      ]
+    }
+  }
+}

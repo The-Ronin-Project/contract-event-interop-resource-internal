@@ -9,21 +9,21 @@
       "type": "string"
     },
     "resourceType": {
-      "$ref": "meta.schema.json#/$defs/ResourceType"
+      "$ref": "resource-type.schema.json"
     },
     "resourceJson": {
       "description": "The JSON string representation of the FHIR resource that was retrieved.",
       "type": "string"
     },
-    "meta": {
+    "metadata": {
       "description": "The metadata associated to this load",
-      "$ref": "meta.schema.json"
+      "$ref": "metadata.schema.json"
     }
   },
   "required": [
     "tenantId",
     "resourceType",
     "resourceJson",
-    "meta"
+    "metadata"
   ]
 }

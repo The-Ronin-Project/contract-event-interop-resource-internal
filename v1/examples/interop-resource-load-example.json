@@ -3,7 +3,7 @@
   "resourceType": "Observation",
   "resourceFHIRId": "b01abdcd-bf57-4e4f-9bec-5003c73009ec",
   "dataTrigger": "adhoc",
-  "meta": {
+  "metadata": {
     "runId": "077e06b9-a6e2-4e3e-a03a-1e50faecc807",
     "runDateTime": "2023-04-27T16:00:00+00:00",
     "upstreamReferences": [

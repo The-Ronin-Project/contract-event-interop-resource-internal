@@ -13,7 +13,7 @@
       "type": "string"
     },
     "resourceType": {
-      "$ref": "meta.schema.json#/$defs/ResourceType"
+      "$ref": "resource-type.schema.json"
     },
     "dataTrigger": {
       "description": "The data trigger context, i.e. 'Nightly'",
@@ -24,15 +24,15 @@
         "backfill"
       ]
     },
-    "meta": {
+    "metadata": {
       "description": "The metadata associated to this load",
-      "$ref": "meta.schema.json"
+      "$ref": "metadata.schema.json"
     }
   },
   "required": [
     "tenantId",
     "resourceType",
     "resourceFHIRId",
-    "meta"
+    "metadata"
   ]
 }
