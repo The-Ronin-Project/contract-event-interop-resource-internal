@@ -1,38 +1,27 @@
-# Event Contract Template
-
 # Scope
-Describe what types of data are included in this schema and how they should be interpreted. This description is valuable to get alignment between the Producers and Consumers about what we intend to message. 
 
-# Initial Setup
+Included in this schema are Interops resource events and supporting 
+data for resource tracking and flow control.
 
-## Example Directory Structure
-```
-<schema_repo_root>/
-|- .github/workflows/cicd.yaml              # Simple Github Actions workflow that leverages a 
-|                                           # shared workflow for all event contracts
-|- .gitignore                               # Exclude the docs and build directories
-|- README.md                                # This file
-|- Makefile                                 # Simple makefile for test/clean/doc. Uses a docker 
-|                                           # image for the logic. See link below
-|- v1/                                      # Directory for each major version
-  |- <schema_name>-v1.schema.json           # The contract schema
-  |- examples/
-  |- <example_name>.json                  # example payloads that conforms to the schema
-  |- docs/                                  # Generated documentation from the schema 
-```
-**This can be removed when you have actual files. This is defined here to assit the initial author.**
+### MetaData
 
-## Boilerplate to update
-- [ ] Choose the name of the contract. This should be the suffix of the topic name minus the version. This is based on the naming strategy defined in the [Events Topic Standard](https://projectronin.atlassian.net/wiki/spaces/ENG/pages/1765998701/Event+Topic+Standards). Example: `emr-patient`
-- [ ] Replace `ronin-contract-event-template` with the contract name in the following places:
-  - [ ] `v1/ronin-contract-event-template.schema.json`
-  - [ ] `.github/workflows/cicd.yaml`
+MetaData is an optional (and thus passive)
+object that contains any amount of tracking data
+that Interops may want to provide.
 
-# Usage
-This contains a simple `Makefile` for automating validation and document generation.  
-- `make test`: Validate each versioned schema against all of its example files.
-- `make doc`: Compile human readable HTML documentation for each versioned schema
-- `make clean`: Cleans up all generated files
+### FlowOptions
+
+Provides a way to differentiate downstream processing when getting 
+re-processing requests from data platform vss validation server:
+
+- Data Platform reloads only reload the specific entities (nothing downstream).
+- Validation trigger downstream processing.
+- Both cases ensure the data normalization registry and mappings 
+  are refreshed in the Interops cache.
+
+FlowOptions is an optional (and thus passive) 
+object that contains any number of optional flow controls 
+that Interops may want to provide.
 
 # Links
 - [Event Contract Management Standard](https://projectronin.atlassian.net/wiki/spaces/ENG/pages/1797521454/Event+Contract+Management+Standard)
