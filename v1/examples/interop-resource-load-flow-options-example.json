@@ -1,0 +1,24 @@
+{
+  "tenantId": "apposnd",
+  "resourceType": "Observation",
+  "resourceFHIRId": "b01abdcd-bf57-4e4f-9bec-5003c73009ec",
+  "dataTrigger": "adhoc",
+  "metadata": {
+    "runId": "077e06b9-a6e2-4e3e-a03a-1e50faecc807",
+    "runDateTime": "2023-04-27T16:00:00+00:00",
+    "upstreamReferences": [
+      {
+        "resourceType": "Patient",
+        "id": "43235e7c-aba0-4fd5-9166-ec996203f22e"
+      },
+      {
+        "resourceType": "Condition",
+        "id": "5340159a-0fa9-48fd-9d8e-502384698eb3"
+      }
+    ],
+    "flowOptions": {
+      "disableDownstreamResources": true,
+      "normalizationRegistryMinimumTime": "2023-04-27T16:00:00+00:00"
+    }
+  }
+}
