@@ -19,6 +19,10 @@
       "items": {
         "$ref": "#/$defs/UpstreamReference"
       }
+    },
+    "backfillRequst": {
+        "description": "Information about the associated backfill",
+        "$ref": "#/$defs/BackfillRequest"
     }
   },
   "required": [
@@ -41,6 +45,25 @@
         "resourceType",
         "id"
       ]
+    },
+    "BackfillRequest": {
+      "type": "object",
+      "properties": {
+        "backfillID": {
+          "description": "The UUID for this backfill request",
+          "type": "string"
+        },
+        "backfillStartDate": {
+          "description": "The start of the date range to use for EHR searches",
+          "type": "string",
+          "format": "date-time"
+        },
+        "backfillEndDate": {
+          "description": "The end of the date range to use for EHR searches",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
     }
   }
 }
