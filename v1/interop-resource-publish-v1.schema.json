@@ -27,6 +27,22 @@
     "metadata": {
       "description": "The metadata associated to this load",
       "$ref": "metadata.schema.json"
+    },
+    "embeddedResources": {
+      "description": "The List of resources that were embedded within, but have been removed from, the published resource",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "$ref": "resource-type.schema.json"
+          },
+          "resourceJson": {
+            "description": "The JSON string representation of this embedded FHIR resource",
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "required": [

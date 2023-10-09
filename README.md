@@ -1,29 +1,33 @@
 # Scope
 
-Included in this schema are Interops resource events and supporting 
-data for resource tracking and flow control.
+Included in this schema are Interops resource events and supporting data for resource tracking and flow control.
 
 ### MetaData
 
-MetaData is an optional (and thus passive)
-object that contains any amount of tracking data
-that Interops may want to provide.
+MetaData is an optional (and thus passive) object that contains any amount of tracking data that Interops may want to
+provide.
 
 ### FlowOptions
 
-Provides a way to differentiate downstream processing when getting 
-re-processing requests from data platform vss validation server:
+Provides a way to differentiate downstream processing when getting re-processing requests from data platform vss
+validation server:
 
 - Data Platform reloads only reload the specific entities (nothing downstream).
 - Validation trigger downstream processing.
-- Both cases ensure the data normalization registry and mappings 
-  are refreshed in the Interops cache.
+- Both cases ensure the data normalization registry and mappings are refreshed in the Interops cache.
 
-FlowOptions is an optional (and thus passive) 
-object that contains any number of optional flow controls 
-that Interops may want to provide.
+FlowOptions is an optional (and thus passive) object that contains any number of optional flow controls that Interops
+may want to provide.
+
+# Development
+
+## POJO Generation
+
+If you have updated an event, building the project (`./gradlew buld`) will generate an updated version of the classes
+visible in `build/generated-sources` that can be used for manual validation of the generated objects.
 
 # Links
+
 - [Event Contract Management Standard](https://projectronin.atlassian.net/wiki/spaces/ENG/pages/1797521454/Event+Contract+Management+Standard)
 - [Ronin Event Standard](https://projectronin.atlassian.net/wiki/spaces/ENG/pages/1748041738/Ronin+Event+Standard)
 - [Event Topic Standards](https://projectronin.atlassian.net/wiki/spaces/ENG/pages/1765998701/Event+Topic+Standards)
