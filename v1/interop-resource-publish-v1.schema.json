@@ -41,7 +41,11 @@
             "description": "The JSON string representation of this embedded FHIR resource",
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "resourceType",
+          "resourceJson"
+        ]
       }
     }
   },
