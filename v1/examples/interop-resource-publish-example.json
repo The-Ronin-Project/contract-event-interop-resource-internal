@@ -8,8 +8,8 @@
     "runDateTime": "2023-04-27T16:00:00+00:00",
     "backfillRequest": {
       "backfillID": "12345",
-      "backfillStartDate": "2023-04-27T16:00:00+00:00",
-      "backfillEndDate": "2023-012-31T00:00:00+00:00"
+      "backfillStartDate": "2023-04-27T16:00:00Z",
+      "backfillEndDate": "2023-12-31T00:00:00Z"
     }
   }
 }

@@ -20,7 +20,7 @@
         "$ref": "#/$defs/UpstreamReference"
       }
     },
-    "backfillRequst": {
+    "backfillRequest": {
         "description": "Information about the associated backfill",
         "$ref": "#/$defs/BackfillRequest"
     }
@@ -63,7 +63,12 @@
           "type": "string",
           "format": "date-time"
         }
-      }
+      },
+      "required": [
+        "backfillID",
+        "backfillStartDate",
+        "backfillEndDate"
+      ]
     }
   }
 }
