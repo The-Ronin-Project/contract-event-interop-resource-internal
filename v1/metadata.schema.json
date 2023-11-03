@@ -49,7 +49,7 @@
     "BackfillRequest": {
       "type": "object",
       "properties": {
-        "backfillID": {
+        "backfillId": {
           "description": "The UUID for this backfill request",
           "type": "string"
         },
@@ -65,7 +65,7 @@
         }
       },
       "required": [
-        "backfillID",
+        "backfillId",
         "backfillStartDate",
         "backfillEndDate"
       ]
