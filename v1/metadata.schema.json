@@ -23,6 +23,13 @@
     "backfillRequest": {
         "description": "Information about the associated backfill",
         "$ref": "#/$defs/BackfillRequest"
+    },
+    "targetedResources": {
+      "description": "Optional resource list to target a specific subset of resources. If the list is empty, it will be assumed that all currently supported resources will be run.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
